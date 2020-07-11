@@ -45,7 +45,7 @@ defmodule RapidNba do
   end
 
   @game_filters [:season_year, :league, :game_id, :team_id, :date, :live]
-  def games_by([{filter_key, _}] = filter) when key in @player_filters do
+  def games_by([{filter_key, _}] = filter) when filter_key in @game_filters do
     get("/games/#{filter_path(filter)}")
   end
 
